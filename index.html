@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreyWell Psych | Stephen Valladares, PMHNP-BC | Psychiatric Care Across New York</title>
+    <meta name="description" content="GreyWell Psych - Board-Certified Psychiatric Mental Health Nurse Practitioner offering telehealth services for ADHD, anxiety, depression, bipolar disorder, PTSD, insomnia, and OCD across New York State.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #2c5f7c 0%, #3d7a96 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        .nav-links a:hover {
+            opacity: 0.8;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c5f7c 0%, #4a8ca8 100%);
+            color: white;
+            padding: 140px 2rem 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .hero .credentials {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #2c5f7c;
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        
+        /* Sections */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 5rem 2rem;
+        }
+        
+        section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #2c5f7c;
+            text-align: center;
+        }
+        
+        section .subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        /* Decorative divider */
+        .section-decoration {
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .decoration-dots {
+            display: inline-flex;
+            gap: 10px;
+        }
+
+        .decoration-dots span {
+            width: 8px;
+            height: 8px;
+            background: #2c5f7c;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .decoration-dots span:nth-child(2) {
+            opacity: 0.7;
+        }
+
+        .decoration-dots span:nth-child(1),
+        .decoration-dots span:nth-child(5) {
+            opacity: 0.3;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        .about-photo-section {
+            text-align: center;
+        }
+        
+        .about-photo {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 2rem;
+        }
+        
+        .about-text p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .about-highlights {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 10px;
+            border-left: 4px solid #2c5f7c;
+        }
+        
+        .about-highlights h3 {
+            color: #2c5f7c;
+            margin-bottom: 1rem;
+        }
+        
+        .about-highlights ul {
+            list-style: none;
+        }
+        
+        .about-highlights li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .about-highlights li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #2c5f7c;
+            font-weight: bold;
+        }
+        
+        /* Ideal Client Section */
+        .ideal-client-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-left: 5px solid #2c5f7c;
+        }
+        
+        .ideal-client-box p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            color: #444;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Services Grid */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+        }
+        
+        .service-card h3 {
+            color: #2c5f7c;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Treatment Process Section */
+        .process-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .process-step {
+            background: white;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #2c5f7c;
+        }
+
+        .process-step h3 {
+            color: #2c5f7c;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .process-step p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .process-step ul {
+            margin-left: 1.5rem;
+            color: #666;
+        }
+
+        .process-step ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .approach-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s, border-color 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .approach-card:hover {
+            transform: translateY(-5px);
+            border-color: #2c5f7c;
+        }
+
+        .approach-card h4 {
+            color: #2c5f7c;
+            margin-bottom: 0.5rem;
+        }
+
+        .approach-card p {
+            font-size: 0.95rem;
+            color: #666;
+        }
+        
+        /* Insurance Section */
+        .insurance-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .insurance-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 500;
+            color: #2c5f7c;
+        }
+        
+        /* Contact Section */
+        #contact {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .contact-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .contact-info {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            margin-top: 2rem;
+        }
+        
+        .contact-info p {
+            margin: 1.5rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .contact-info strong {
+            color: #2c5f7c;
+        }
+
+        .contact-info a {
+            color: #2c5f7c;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background: #2c5f7c;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .credentials {
+                font-size: 1.2rem;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            section {
+                padding: 3rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">GreyWell Psych</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">My Approach</a></li>
+                <li><a href="#insurance">Insurance</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Stephen Valladares</h1>
+            <p class="credentials">Board-Certified Psychiatric Mental Health Nurse Practitioner</p>
+            <p>Compassionate, evidence-based psychiatric care via telehealth across New York State</p>
+            <a href="https://care.headway.co/providers/stephen-valladares-3?utm_source=pem&utm_medium=direct_link&utm_campaign=159024" target="_blank" class="cta-button">Book Appointment</a>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>Welcome to GreyWell Psych</h2>
+        <p class="subtitle">You don't have to navigate this alone</p>
+        
+        <div class="ideal-client-box">
+            <p>You might be struggling with focus and organization, wondering if ADHD has been holding you back. Perhaps anxiety has become overwhelming, affecting your work, relationships, and daily life. Maybe depression has made everything feel exhausting, or mood swings are disrupting your stability.</p>
+            
+            <p>You're looking for answers - a clear diagnosis, effective treatment, and relief from symptoms impacting your quality of life. You want a provider who listens, explains options clearly, and partners with you in care. You're ready to feel like yourself again - focused, calm, and capable of enjoying life. You deserve compassionate support.</p>
+        </div>
+
+        <div class="about-content">
+            <div class="about-photo-section">
+                <img src="headshot.jpg" alt="Stephen Valladares, PMHNP-BC" class="about-photo">
+                <div class="about-highlights">
+                    <h3>What Sets My Practice Apart</h3>
+                    <ul>
+                        <li>Decade of nursing experience</li>
+                        <li>Board-certified psychiatric expertise</li>
+                        <li>Collaborative care approach</li>
+                        <li>Convenient telehealth services</li>
+                        <li>Flexible scheduling (mornings & evenings)</li>
+                        <li>Currently accepting new patients</li>
+                        <li>48-hour response to new inquiries</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="about-text">
+                <p>I'm Stephen Valladares, a Board-Certified Psychiatric Mental Health Nurse Practitioner dedicated to providing compassionate, evidence-based psychiatric care to individuals across New York State.</p>
+                
+                <p>With a decade of nursing experience and specialized training in psychiatry, I've dedicated my career to mental health. I earned my Master's degree and Board Certification as a PMHNP because I'm passionate about helping people achieve lasting wellness and improved quality of life.</p>
+                
+                <p>Seeking help is a sign of strength. I'll take time to understand your unique situation - your symptoms, goals, and what matters most. We'll discuss all options, and you'll be involved in every decision. Many clients wish they'd reached out sooner. You deserve relief.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="services">
+        <h2>Areas of Specialization</h2>
+        <p class="subtitle">Expert care for a range of mental health conditions</p>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>ADHD</h3>
+                <p>Comprehensive evaluation and medication management for attention-deficit/hyperactivity disorder in adults, helping you improve focus, organization, and daily functioning.</p>
+            </div>
+            
+            <div class="service-card">
+                <h3>Anxiety & Depression</h3>
+                <p>Evidence-based treatment for anxiety disorders and depression, including medication management and coordination with your therapy provider.</p>
+            </div>
+            
+            <div class="service-card">
+                <h3>Bipolar Disorder</h3>
+                <p>Specialized care for mood stabilization and symptom management, working to help you achieve lasting stability and improved quality of life.</p>
+            </div>
+            
+            <div class="service-card">
+                <h3>PTSD</h3>
+                <p>Trauma-informed psychiatric care for post-traumatic stress disorder, supporting your healing journey with appropriate medication management.</p>
+            </div>
+            
+            <div class="service-card">
+                <h3>Insomnia</h3>
+                <p>Assessment and treatment of sleep disorders, helping you develop healthy sleep patterns and restore restorative rest.</p>
+            </div>
+            
+            <div class="service-card">
+                <h3>OCD</h3>
+                <p>Specialized treatment for obsessive-compulsive disorder, including medication management that complements evidence-based therapy approaches.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="process">
+        <h2>My Approach & Treatment Process</h2>
+        <p class="subtitle">Evidence-based, collaborative, and personalized care</p>
+        
+        <div class="process-content">
+            <div class="process-step">
+                <h3>1. Initial Evaluation (60 minutes)</h3>
+                <p>Our journey begins with a comprehensive psychiatric evaluation where I take time to understand your symptoms, history, and goals. We'll discuss your diagnosis and review all treatment options, including the benefits and potential side effects of medications. Together, we'll create a personalized treatment plan that fits your needs and preferences.</p>
+            </div>
+
+            <div class="process-step">
+                <h3>2. Treatment Planning</h3>
+                <p>I integrate evidence-based psychopharmacology with collaborative care principles. Your experience will be personalized, compassionate, and focused on your goals. We'll work as partners - I provide expertise and recommendations, you provide insight into what works for you. Treatment is practical and results-oriented.</p>
+            </div>
+
+            <div class="process-step">
+                <h3>3. Follow-Up Care (20-30 minutes)</h3>
+                <p>Follow-up appointments focus on monitoring your progress, adjusting medications as needed, and ensuring your treatment is working effectively. I coordinate with your therapist if you're in counseling to provide integrated care. Appointments are scheduled based on your needs - often every 2-4 weeks initially, then less frequently as you stabilize.</p>
+            </div>
+
+            <div class="process-step">
+                <h3>What You Can Expect</h3>
+                <ul>
+                    <li><strong>Symptom Relief:</strong> Reduction in anxiety, improved mood, better focus, more stable emotions, and improved sleep</li>
+                    <li><strong>Improved Functioning:</strong> Enhanced ability to work, maintain relationships, and manage daily responsibilities</li>
+                    <li><strong>Clarity & Understanding:</strong> A clear diagnosis and education about your condition</li>
+                    <li><strong>Evidence-Based Treatment:</strong> Medications and approaches backed by research</li>
+                    <li><strong>Collaborative Care:</strong> A provider who listens, explains options, and respects your input</li>
+                    <li><strong>Convenient Access:</strong> Flexible telehealth appointments that fit your schedule</li>
+                    <li><strong>Ongoing Support:</strong> Regular monitoring and adjustments to optimize your treatment</li>
+                </ul>
+            </div>
+        </div>
+
+        <h3 style="text-align: center; color: #2c5f7c; margin: 3rem 0 1.5rem;">Treatment Modalities</h3>
+        <div class="approach-grid">
+            <div class="approach-card">
+                <h4>Integrative</h4>
+                <p>Combining multiple evidence-based approaches for comprehensive care</p>
+            </div>
+            <div class="approach-card">
+                <h4>Collaborative</h4>
+                <p>Working together with you and your care team as partners</p>
+            </div>
+            <div class="approach-card">
+                <h4>Compassion-Focused</h4>
+                <p>Treating you with empathy, understanding, and respect</p>
+            </div>
+            <div class="approach-card">
+                <h4>Evidence-Based</h4>
+                <p>Using treatments backed by current research and best practices</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="insurance">
+        <h2>Insurance & Payment</h2>
+        <p class="subtitle">I accept most major insurance plans for your convenience</p>
+        <div class="insurance-grid">
+            <div class="insurance-item">Aetna</div>
+            <div class="insurance-item">Cigna</div>
+            <div class="insurance-item">United Healthcare (Optum)</div>
+            <div class="insurance-item">Anthem BCBS New York (formerly Empire)</div>
+            <div class="insurance-item">Oxford (Optum)</div>
+            <div class="insurance-item">Oscar (Optum)</div>
+            <div class="insurance-item">Highmark BCBS Western NY</div>
+            <div class="insurance-item">Highmark BCBS Northeastern NY</div>
+            <div class="insurance-item">BCBS of Massachusetts</div>
+            <div class="insurance-item">Carelon Behavioral Health</div>
+            <div class="insurance-item">Quest Behavioral Health</div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get Started Today</h2>
+        <p class="subtitle">I'm currently accepting new patients</p>
+        <div class="contact-content">
+            <p>Taking the first step toward better mental health is important, and I'm here to support you. I offer flexible scheduling with appointments available throughout the week, including morning and evening hours.</p>
+            
+            <div class="contact-info">
+                <p><strong>Service Area:</strong> Telehealth across New York State</p>
+                <p><strong>Email:</strong> <a href="mailto:svalladaresgwp@gmail.com">svalladaresgwp@gmail.com</a></p>
+                <p><strong>Response Time:</strong> I respond to new inquiries within 48 hours</p>
+                <a href="https://care.headway.co/providers/stephen-valladares-3?utm_source=pem&utm_medium=direct_link&utm_campaign=159024" target="_blank" class="cta-button" style="margin-top: 1rem;">Book Appointment</a>
+            </div>
+            
+            <p style="margin-top: 2rem; color: #666; font-size: 0.95rem;">For referring providers: I welcome collaborative relationships with therapists and other mental health professionals. Please feel free to reach out to discuss how we can work together to support our mutual clients.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 GreyWell Psych | Stephen Valladares, PMHNP-BC. All rights reserved.</p>
+        <p style="margin-top: 0.5rem; font-size: 0.9rem;">Telehealth Services Across New York State</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
